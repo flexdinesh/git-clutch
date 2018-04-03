@@ -1,0 +1,17 @@
+@import 'breakpoints';
+
+.search-box {
+  input {
+    outline: none;
+    border-bottom: 1px dotted #999;
+    text-align: center;
+    height: 4rem;
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    width: 60%;
+  
+    @include breakpoint-medium-down {
+      width: 95%;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import 'breakpoints';
+
+.content-grid {
+  margin: 0 auto;
+  max-width: calc(100% - 2rem);
+
+  @include breakpoint-small-up {
+    max-width: calc(100% - 2rem);
+  }
+
+  @include breakpoint-medium-up {
+    max-width: calc(100% - 4rem);
+  }
+
+  @include breakpoint-large-up {
+    max-width: calc(100% - 8rem);
+  }
+
+  @include breakpoint-xlarge-up {
+    max-width: calc(100% - 16rem);
+  }
+
+  @include breakpoint-xxlarge-up {
+    max-width: calc(100% - 20rem);
+  }
+
+}
