@@ -1,17 +1,32 @@
+@import 'theme';
 @import 'breakpoints';
+@import 'typography';
 
 .search-box {
-  input {
-    outline: none;
-    border-bottom: 1px dotted #999;
-    text-align: center;
-    height: 4rem;
-    font-size: 1.4rem;
-    padding: 0 1rem;
-    width: 60%;
+
+  &__container {
+    input {
+      @include font-lato;
+      height: 3.5rem;
+      margin-left: 12px;
+      padding: 0 0.75rem;
+      text-overflow: ellipsis;
+      border: 1px solid transparent;
+      border-radius: 2px 0 0 2px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+      width: 60%;
   
-    @include breakpoint-medium-down {
-      width: 95%;
+      @include breakpoint-medium-down {
+        width: 95%;
+      }
+  
+      &:focus {
+        border-color: $colorPrimary;
+      }
     }
   }
+  
 }

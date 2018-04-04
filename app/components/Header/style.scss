@@ -3,28 +3,30 @@
 .header {
   color: white;
   text-align: left;
-  height: 4rem;
-  background-color: $colorPrimary;
+  height: 3.5rem;
 
   .content-grid {
     display: flex;
     height: 100%;
+    justify-content: center;
     
     .title-wrapper {
       display: flex;
       align-items: center;
+      color: $colorPrimary;
       height: 100%;
-      padding: 0 1rem;
+      padding: 0 1.5rem;
       transition: 0.25s;
 
       h1 {
         margin: 0;
         font-size: 1.75rem;
+        font-weight: bold;
       }
 
       &:hover {
-        background-color: white;
-        color: $colorPrimary;
+        background-color: $colorPrimary;
+        color: white;
       }
     }
     
