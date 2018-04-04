@@ -1,3 +1,5 @@
+@import 'breakpoints';
+
 .home-page {
   flex: 1;
   
@@ -7,11 +9,6 @@
   
   section {
     margin: 2rem auto;
-
-
-    &.centered {
-      text-align: center;
-    }
   }
 
   form {
@@ -21,5 +18,13 @@
   span.at-prefix {
     color: black;
     margin-left: 0.4em;
+  }
+
+  .search-wrapper {
+    width: 60%;
+  
+    @include breakpoint-medium-down {
+      width: 95%;
+    }
   }
 }

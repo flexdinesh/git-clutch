@@ -3,29 +3,56 @@
 @import 'typography';
 
 .search-box {
+  position: relative;
 
-  &__container {
+  .input-wrapper {
+    display: flex;
+
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+
     input {
       @include font-lato;
-      height: 3.5rem;
+      flex: 1;
       margin-left: 12px;
-      padding: 0 0.75rem;
+      padding: 0 0.5rem;
       text-overflow: ellipsis;
-      border: 1px solid transparent;
-      border-radius: 2px 0 0 2px;
       box-sizing: border-box;
       -moz-box-sizing: border-box;
       outline: none;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-      width: 60%;
-  
-      @include breakpoint-medium-down {
-        width: 95%;
-      }
-  
+
       &:focus {
         border-color: $colorPrimary;
       }
+    }
+
+    .search-icon {
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      background-color: $colorPrimary;
+      color: white;
+      border: 1px solid $colorPrimary;
+      border-radius: 2px 0 0 2px;
+    }
+  }
+
+  .autocomplete-dropdown {
+    position: absolute;
+    top: 3.4rem;
+    left: 0;
+    text-align: left;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+    .suggestion {
+      padding: 0.5rem;
+      line-height: 1rem;
     }
   }
   

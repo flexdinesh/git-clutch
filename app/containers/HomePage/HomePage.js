@@ -25,14 +25,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     return (
       <div className="home-page">
         <Layout.ContentGrid>
-          <section className="centered">
-            {/* <input
-              id="search-term"
-              type="text"
-              placeholder="stash a file"
-              value={this.props.username}
-              onChange={this.props.onChangeUsername}
-            /> */}
+          <section className="search-wrapper">
             <SearchBox />
           </section>
         </Layout.ContentGrid>
