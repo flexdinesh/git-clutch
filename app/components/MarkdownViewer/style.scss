@@ -1,0 +1,14 @@
+.markdown-viewer {
+  padding: 1rem 2rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+
+  pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 3px;
+  }
+}
