@@ -11,8 +11,7 @@ describe('<MarkdownViewer />', () => {
 
   it('should render Markdown', () => {
     const md = '# MD works!';
-    const encodedMD = btoa(md);
-    const renderedComponent = shallow(<MarkdownViewer mdInput={encodedMD} />);
+    const renderedComponent = shallow(<MarkdownViewer mdInput={md} />);
     const expectedElem = '<h1>MD works!</h1>';
     expect(renderedComponent.html()).toContain(expectedElem);
   });

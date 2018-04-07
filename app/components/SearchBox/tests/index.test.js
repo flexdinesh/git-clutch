@@ -11,7 +11,7 @@ describe('<SearchBox />', () => {
 
   beforeEach(() => {
     props = {
-      topics: [{ title: 'Jack Daniels' }, { title: 'John Doe' }]
+      topics: [{ header: 'Jack Daniels' }, { header: 'John Doe' }]
     };
     focus = sinon.stub(domUtils, 'focus').callsFake(() => {});
     blur = sinon.stub(domUtils, 'blur').callsFake(() => {});

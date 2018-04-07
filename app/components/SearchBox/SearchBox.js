@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Fuse from 'fuse.js';
 import t from 'typy';
 import { focus, blur } from 'utils/dom';
+import { getPlainTextFromMD } from 'utils/markdown';
 
 import './style.scss';
 
@@ -14,7 +15,7 @@ const searchOptions = {
   distance: 100,
   maxPatternLength: 32,
   minMatchCharLength: 1,
-  keys: ['title']
+  keys: ['header']
 };
 
 class SearchBox extends Component {
@@ -98,7 +99,7 @@ class SearchBox extends Component {
           {suggestions.map((item, i) => (
             <div
               className="suggestion"
-              key={item.title}
+              key={item.header}
               onClick={(e) => this.selectTopic(e)}
               onKeyDown={(e) => this.keyDownOnSuggestion(e, i)}
               role="searchbox"
@@ -107,7 +108,7 @@ class SearchBox extends Component {
                 this.suggestionDOMNodes[i] = elem;
               }}
             >
-              {item.title}
+              {getPlainTextFromMD(item.header)}
             </div>
           ))}
         </div>
