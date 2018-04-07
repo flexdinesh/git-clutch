@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 import Layout from 'components/Layout';
 import SearchBox from 'components/SearchBox';
 import MarkdownViewer from 'components/MarkdownViewer';
+import { preventPageScroll } from 'utils/dom';
+import topics from './search-list';
 
 import './style.scss';
 
@@ -20,6 +22,11 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     if (this.props.username && this.props.username.trim().length > 0) {
       this.props.onSubmitForm();
     }
+    window.addEventListener('keydown', (e) => preventPageScroll(e), false);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', (e) => preventPageScroll(e), false);
   }
 
   render() {
@@ -29,7 +36,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
       <div className="home-page">
         <Layout.ContentGrid>
           <section className="search-wrapper">
-            <SearchBox />
+            <SearchBox topics={topics} />
           </section>
           <section className="markdown-wrapper">
             <MarkdownViewer mdInput={base64Md} />
