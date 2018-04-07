@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.scss';
 
-const Footer = () => (
+const SearchBox = () => (
   <div className="search-box">
     <div className="input-wrapper">
       <input
@@ -21,4 +21,4 @@ const Footer = () => (
   </div>
 );
 
-export default Footer;
+export default SearchBox;
