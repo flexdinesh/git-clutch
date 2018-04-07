@@ -6,16 +6,11 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import t from 'typy';
 import Layout from 'components/Layout';
 import SearchBox from 'components/SearchBox';
 import MarkdownViewer from 'components/MarkdownViewer';
 import { preventPageScroll } from 'utils/dom';
-import topics, {
-  whatDidICommit,
-  committedToMaster,
-  discardLocalCommits
-} from './search-list';
+import topics, { whatDidICommit } from './search-list';
 
 import './style.scss';
 
@@ -35,7 +30,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
   }
 
   render() {
-    const decodedMd = atob(discardLocalCommits);
+    const decodedMd = atob(whatDidICommit);
     return (
       <div className="home-page">
         <Layout.ContentGrid>
